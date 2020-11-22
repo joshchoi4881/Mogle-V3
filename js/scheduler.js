@@ -14,7 +14,7 @@ function mobile(x) {
         $("#wednesday").html("Wednesday");
         $("#thursday").html("Thursday");
         $("#friday").html("Friday");
-        $("#saturday").html("Sunday");
+        $("#saturday").html("Saturday");
     }
 }
 var x = window.matchMedia("(max-width: 700px)")

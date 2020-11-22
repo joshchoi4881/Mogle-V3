@@ -55,8 +55,8 @@
         <section class="center">
             <div class="card">
                 <h1 class="ovo">Scheduler</h1>
-                <p class="gilroy">Join our <a href="waitlist.php">waitlist</a> to request earnings predictions for your platform(s) and city.</p>
-                <p class="gilroy">Fill out your schedule below to estimate earnings.</p>
+                <p class="gilroy">Join our <a href="waitlist.php">waitlist</a> to request earnings predictions and wage insurance for your platform(s) and city.</p>
+                <p class="gilroy">Fill out your schedule below to estimate earnings and get a quote.</p>
                 <p class="gilroy">Location:</p>
                 <select id="location" class="gilroy">
                     <option value="Kenosha;WI">Kenosha, WI</option>

@@ -73,7 +73,7 @@
                     <label class="gilroy" for="newsletter"> Newsletter: we'll email you three new freelance opportunities every week, as well as freelance-related news.</label>
                     <br/>
                     <input type="checkbox" id="analytics" name="analytics" value="Analytics">
-                    <label class="gilroy" for="analytics"> <a href="analytics.php">Analytics</a>: we'll analyze your earnings data and help you find patterns in your income to optimize it at no cost.</label>
+                    <label class="gilroy" for="analytics"> <a href="analytics.php">Analytics</a>: we'll analyze your earnings data and help you find patterns in your income to optimize it.</label>
                     <br>
                     <input type="checkbox" id="scheduler" name="scheduler" value="Scheduler">
                     <label class="gilroy" for="scheduler"> <a href="scheduler.php">Scheduler</a>: we'll start conducting wage insurance in your city.</label>

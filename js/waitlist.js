@@ -1,5 +1,7 @@
 function saveEmail() {
     const email = $("#email").val();
+    const firstName = $("#firstName").val();
+    const lastName = $("#lastName").val();
     const newsletter = $("#newsletter").is(":checked");
     const analytics = $("#analytics").is(":checked");
     const scheduler = $("#scheduler").is(":checked");
@@ -20,6 +22,12 @@ function saveEmail() {
     if(email == "") {
         $("#response").html("Please enter your email");
     }
+    else if(firstName == "") {
+        $("#response").html("Please enter your first name");
+    }
+    else if(lastName == "") {
+        $("#response").html("Please enter your last name");
+    }
     else if(newsletter == "" && analytics == "" && scheduler == "") {
         $("#response").html("Please select features to be on the waitlist for");
     }
@@ -35,6 +43,8 @@ function saveEmail() {
             method: "POST",
             data: {
                 email: email,
+                firstName: firstName,
+                lastName: lastName,
                 features: features,
                 platforms: platforms,
                 location: location

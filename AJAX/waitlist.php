@@ -1,6 +1,8 @@
 <?php
 	include("../classes/Database.php");
     $email = $_POST["email"];
+    $firstName = $_POST["firstName"];
+    $lastName = $_POST["lastName"];
     $features = $_POST["features"];
     $platforms = $_POST["platforms"];
     $location = $_POST["location"];
@@ -57,7 +59,7 @@
         $other = "None";
     }
     if(!Database::query("SELECT email FROM waitlist WHERE email=:email", array(":email"=>$email))) {
-        Database::query("INSERT INTO waitlist VALUES (:id, :email, :newsletter, :analytics, :scheduler, :Uber, :Lyft, :Uber_Eats, :Postmates, :DoorDash, :Grubhub, :Instacart, :Shipt, :other, :city, :state_)", array(":id"=>null, ":email"=>$email, ":newsletter"=>$newsletter, ":analytics"=>$analytics, ":scheduler"=>$scheduler, ":Uber"=>$Uber, ":Lyft"=>$Lyft, ":Uber_Eats"=>$Uber_Eats, ":Postmates"=>$Postmates, ":DoorDash"=>$DoorDash, ":Grubhub"=>$Grubhub, ":Instacart"=>$Instacart, ":Shipt"=>$Shipt, ":other"=>$other, ":city"=>$city, ":state_"=>$state));
+        Database::query("INSERT INTO waitlist VALUES (:id, :email, :firstName, :lastName, :newsletter, :analytics, :scheduler, :Uber, :Lyft, :Uber_Eats, :Postmates, :DoorDash, :Grubhub, :Instacart, :Shipt, :other, :city, :state_)", array(":id"=>null, ":email"=>$email, ":firstName"=>$firstName, ":lastName"=>$lastName, ":newsletter"=>$newsletter, ":analytics"=>$analytics, ":scheduler"=>$scheduler, ":Uber"=>$Uber, ":Lyft"=>$Lyft, ":Uber_Eats"=>$Uber_Eats, ":Postmates"=>$Postmates, ":DoorDash"=>$DoorDash, ":Grubhub"=>$Grubhub, ":Instacart"=>$Instacart, ":Shipt"=>$Shipt, ":other"=>$other, ":city"=>$city, ":state_"=>$state));
         echo "Successfully added to the waitlist!";
     } else {
         echo "You're already in the waitlist!";

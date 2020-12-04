@@ -75,6 +75,12 @@
                 <p class="gilroy">Enter your email to join our waitlist.</p>
                 <input id="email" class="gilroy" type="email"/>
                 <br/>
+                <p class="gilroy">First Name:</p>
+                <input id="firstName" class="gilroy" type="text"/>
+                <br/>
+                <p class="gilroy">Last Name:</p>
+                <input id="lastName" class="gilroy" type="text"/>
+                <br/>
                 <p class="gilroy">Which features would you like to be on the waitlist for?</p>
                 <br/>
                 <div class="left">

@@ -10,6 +10,9 @@ body {
     top: 0;
     width: 100%;
 }
+.nav-link:hover {
+    color: #fff;
+}
 
 /* Cards */
 .card {
@@ -58,6 +61,14 @@ th, td {
 .cell:hover {
     cursor: pointer;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Waitlist */
+.label {
+    display: inline-block;
+}
+.description {
+    text-indent: 50px;
 }
 
 /* Misc */

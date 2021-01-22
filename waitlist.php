@@ -68,7 +68,8 @@
         </header>
         <section class="center">
             <div class="card">
-                <h1 class="ovo">Waitlist</h1>
+                <h1 class="ovo">Waitlist*</h1>
+                <p class="gilroy">*For a limited time only, we are offering a free week of earnings insurance (no premium payment required) for new <b style="color:red;">DoorDash</b> users who sign up on the waitlist.</p>
                 <p class="gilroy">Enter your email to join our waitlist.</p>
                 <input id="email" class="gilroy" type="email"/>
                 <br/>

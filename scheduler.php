@@ -69,7 +69,8 @@
         <section class="center">
             <div class="card">
                 <h1 class="ovo">Scheduler</h1>
-                <p class="gilroy">Join our <a href="waitlist.php">waitlist</a> to request earnings predictions and wage insurance for your platform(s) and city.</p>
+                <p class="gilroy">Join our <a href="waitlist.php">waitlist</a>* to request earnings predictions and wage insurance for your platform(s) and city.</p>
+                <p class="gilroy">*For a limited time only, we are offering a free week of earnings insurance (no premium payment required) for new <b style="color:red;">DoorDash</b> users who sign up on the waitlist.</p>
                 <p class="gilroy">Fill out your schedule below to estimate earnings and get a quote.</p>
                 <p class="gilroy">Location:</p>
                 <select id="location" class="gilroy">

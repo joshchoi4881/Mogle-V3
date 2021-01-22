@@ -68,6 +68,14 @@
                 <h1 class="ovo">Analytics</h1>
                 <p class="gilroy">Join our <a href="waitlist.php">waitlist</a> to request tailored analytics for your platform(s) and city.</p>
             </div>
+            <div class="card center">
+                <h1 class="ovo">Testimonials</h1>
+                <br/>
+                <div class="center">
+                    <img class="analytics" style="width:50%;height:50%;" src="photos/testimonials/Christa_Boudreau.png"></img>
+                </div>
+                <br/>
+            </div>
             <div class="card">
                 <h1 class="ovo">DoorDash (Kenosha, WI)</h1>
                 <br/>

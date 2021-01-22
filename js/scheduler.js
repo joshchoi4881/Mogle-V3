@@ -24,8 +24,8 @@ let hours = 0;
 let earnings = 0;
 let variance = 0;
 let premium = 0;
-let color = "table-danger";
-let button = "#DoorDash";
+let color = "table-primary";
+let button = "#UberX";
 function clear() {
     hours = 0;
     earnings = 0;
@@ -99,11 +99,18 @@ function getPremium(total, variance) {
 }
 $(function() {
     $("#schedule").css({"background-color": "#800000", "color": "#fff"});
-    $("#UberX").hide();
-    $("#Uber_Eats").hide()
     $("#location").change(function() {
         clear();
-        if($("#location").val() == "Kenosha;WI") {
+        if($("#location").val() == "General") {
+            $(".gigs").hide();
+            $("#UberX").show();
+            $("#Uber_Eats").show();
+            $("#DoorDash").show();
+            $("#clear").show(); 
+            color = "table-primary";
+            button = "#UberX";
+        }
+        else if($("#location").val() == "Kenosha;WI") {
             $(".gigs").hide();
             $("#DoorDash").show();
             $("#clear").show();  

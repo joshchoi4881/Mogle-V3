@@ -73,6 +73,7 @@
                 <p class="gilroy">Fill out your schedule below to estimate earnings and get a quote.</p>
                 <p class="gilroy">Location:</p>
                 <select id="location" class="gilroy">
+                    <option value="General">General</option>
                     <option value="Kenosha;WI">Kenosha, WI</option>
                     <option value="Hackensack;NJ">Hackensack, NJ</option>
                     <option value="St. Louis;MO">St. Louis, MO</option>

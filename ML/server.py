@@ -9,7 +9,9 @@ from sklearn.model_selection import cross_val_score
 SECONDS_IN_YEAR = (dt.datetime(2021, 1, 1) - dt.datetime(2020, 1, 1)).total_seconds()
 
 def get_population_density(location):
-    if location == "Kenosha;WI":
+    if location == "General":
+        return -10
+    elif location == "Kenosha;WI":
         return 1
     elif location == "Hackensack;NJ":
         return 2
@@ -57,11 +59,14 @@ df_UberX = df_UberX[["Location", "Datetime_SINE", "Datetime_COSINE", "DayOfWeek"
 # Separate features and classes
 feature_names_UberX = ["Location", "Datetime_SINE", "Datetime_COSINE", "DayOfWeek"]
 all_features_UberX = df_UberX[feature_names_UberX].values
+general_feature_names_UberX = ["Datetime_SINE", "Datetime_COSINE", "DayOfWeek"]
+general_features_UberX = df_UberX[general_feature_names_UberX].values
 all_classes_NPEPH_UberX = df_UberX["NPEPH"].values
 
 # Normalize data
 scaler = preprocessing.StandardScaler()
 all_features_scaled_UberX = scaler.fit_transform(all_features_UberX)
+general_features_scaled_UberX = scaler.fit_transform(general_features_UberX)
 
 # Uber Eats
 # Import file
@@ -81,11 +86,14 @@ df_Uber_Eats = df_Uber_Eats[["Location", "Datetime_SINE", "Datetime_COSINE", "Da
 # Separate features and classes
 feature_names_Uber_Eats = ["Location", "Datetime_SINE", "Datetime_COSINE", "DayOfWeek"]
 all_features_Uber_Eats = df_Uber_Eats[feature_names_Uber_Eats].values
+general_feature_names_Uber_Eats = ["Datetime_SINE", "Datetime_COSINE", "DayOfWeek"]
+general_features_Uber_Eats = df_Uber_Eats[general_feature_names_Uber_Eats].values
 all_classes_NPEPH_Uber_Eats = df_Uber_Eats["NPEPH"].values
 
 # Normalize data
 scaler = preprocessing.StandardScaler()
 all_features_scaled_Uber_Eats = scaler.fit_transform(all_features_Uber_Eats)
+general_features_scaled_Uber_Eats = scaler.fit_transform(general_features_Uber_Eats)
 
 # DoorDash
 # Import file
@@ -109,11 +117,14 @@ df_DoorDash = df_DoorDash[["Location", "Start_Datetime_SINE", "Start_Datetime_CO
 # Separate features and classes
 feature_names_DoorDash = ["Location", "Start_Datetime_SINE", "Start_Datetime_COSINE", "End_Datetime_SINE", "End_Datetime_COSINE", "DayOfWeek"]
 all_features_DoorDash = df_DoorDash[feature_names_DoorDash].values
+general_feature_names_DoorDash = ["Start_Datetime_SINE", "Start_Datetime_COSINE", "End_Datetime_SINE", "End_Datetime_COSINE", "DayOfWeek"]
+general_features_DoorDash = df_DoorDash[general_feature_names_DoorDash].values
 all_classes_TEPH_DoorDash = df_DoorDash["TEPH"].values
 
 # Normalize data
 scaler = preprocessing.StandardScaler()
 all_features_scaled_DoorDash = scaler.fit_transform(all_features_DoorDash)
+general_features_scaled_DoorDash = scaler.fit_transform(general_features_DoorDash)
 
 # Stats
 # UberX
@@ -139,36 +150,66 @@ svr = svm.SVR(kernel="rbf", C=C)
 
 # Return RBF SVM estimates and k-fold cross-validation scores for UberX
 def get_RBF_SVM_UberX(location, datetime_SINE, datetime_COSINE, dayOfWeek):
-    test_input = [[location, datetime_SINE, datetime_COSINE, dayOfWeek]]
-    # NPEPH
-    cv_scores = cross_val_score(svr, all_features_scaled_UberX, all_classes_NPEPH_UberX, cv=10)
-    NPEPH_k = cv_scores.mean()
-    svr.fit(all_features_scaled_UberX, all_classes_NPEPH_UberX)
-    NPEPH = svr.predict(test_input)[0]
-    NPEPH_array = [NPEPH, NPEPH_k, "NPEPH"]
-    return [NPEPH_array]
+    if location == -1:
+        test_input = [[datetime_SINE, datetime_COSINE, dayOfWeek]]
+        # NPEPH
+        cv_scores = cross_val_score(svr, general_features_scaled_UberX, all_classes_NPEPH_UberX, cv=10)
+        NPEPH_k = cv_scores.mean()
+        svr.fit(general_features_scaled_UberX, all_classes_NPEPH_UberX)
+        NPEPH = svr.predict(test_input)[0]
+        NPEPH_array = [NPEPH, NPEPH_k, "NPEPH"]
+        return [NPEPH_array]
+    else:
+        test_input = [[location, datetime_SINE, datetime_COSINE, dayOfWeek]]
+        # NPEPH
+        cv_scores = cross_val_score(svr, all_features_scaled_UberX, all_classes_NPEPH_UberX, cv=10)
+        NPEPH_k = cv_scores.mean()
+        svr.fit(all_features_scaled_UberX, all_classes_NPEPH_UberX)
+        NPEPH = svr.predict(test_input)[0]
+        NPEPH_array = [NPEPH, NPEPH_k, "NPEPH"]
+        return [NPEPH_array]
 
 # Return RBF SVM estimates and k-fold cross-validation scores for Uber Eats
 def get_RBF_SVM_Uber_Eats(location, datetime_SINE, datetime_COSINE, dayOfWeek):
-    test_input = [[location, datetime_SINE, datetime_COSINE, dayOfWeek]]
-    # NPEPH
-    cv_scores = cross_val_score(svr, all_features_scaled_Uber_Eats, all_classes_NPEPH_Uber_Eats, cv=10)
-    NPEPH_k = cv_scores.mean()
-    svr.fit(all_features_scaled_Uber_Eats, all_classes_NPEPH_Uber_Eats)
-    NPEPH = svr.predict(test_input)[0]
-    NPEPH_array = [NPEPH, NPEPH_k, "NPEPH"]
-    return [NPEPH_array]
+    if location == -1:
+        test_input = [[datetime_SINE, datetime_COSINE, dayOfWeek]]
+        # NPEPH
+        cv_scores = cross_val_score(svr, general_features_scaled_Uber_Eats, all_classes_NPEPH_Uber_Eats, cv=10)
+        NPEPH_k = cv_scores.mean()
+        svr.fit(general_features_scaled_Uber_Eats, all_classes_NPEPH_Uber_Eats)
+        NPEPH = svr.predict(test_input)[0]
+        NPEPH_array = [NPEPH, NPEPH_k, "NPEPH"]
+        return [NPEPH_array]
+    else:
+        test_input = [[location, datetime_SINE, datetime_COSINE, dayOfWeek]]
+        # NPEPH
+        cv_scores = cross_val_score(svr, all_features_scaled_Uber_Eats, all_classes_NPEPH_Uber_Eats, cv=10)
+        NPEPH_k = cv_scores.mean()
+        svr.fit(all_features_scaled_Uber_Eats, all_classes_NPEPH_Uber_Eats)
+        NPEPH = svr.predict(test_input)[0]
+        NPEPH_array = [NPEPH, NPEPH_k, "NPEPH"]
+        return [NPEPH_array]
 
 # Return RBF SVM estimates and k-fold cross-validation scores for DoorDash
 def get_RBF_SVM_DoorDash(location, start_datetime_SINE, start_datetime_COSINE, end_datetime_SINE, end_datetime_COSINE, dayOfWeek):
-    test_input = [[location, start_datetime_SINE, start_datetime_COSINE, end_datetime_SINE, end_datetime_COSINE, dayOfWeek]]
-    # TEPH
-    cv_scores = cross_val_score(svr, all_features_scaled_DoorDash, all_classes_TEPH_DoorDash, cv=10)
-    TEPH_k = cv_scores.mean()
-    svr.fit(all_features_scaled_DoorDash, all_classes_TEPH_DoorDash)
-    TEPH = svr.predict(test_input)[0]
-    TEPH_array = [TEPH, TEPH_k, "TEPH"]
-    return [TEPH_array]
+    if location == -1:
+        test_input = [[start_datetime_SINE, start_datetime_COSINE, end_datetime_SINE, end_datetime_COSINE, dayOfWeek]]
+        # TEPH
+        cv_scores = cross_val_score(svr, general_features_scaled_DoorDash, all_classes_TEPH_DoorDash, cv=10)
+        TEPH_k = cv_scores.mean()
+        svr.fit(general_features_scaled_DoorDash, all_classes_TEPH_DoorDash)
+        TEPH = svr.predict(test_input)[0]
+        TEPH_array = [TEPH, TEPH_k, "TEPH"]
+        return [TEPH_array]
+    else:
+        test_input = [[location, start_datetime_SINE, start_datetime_COSINE, end_datetime_SINE, end_datetime_COSINE, dayOfWeek]]
+        # TEPH
+        cv_scores = cross_val_score(svr, all_features_scaled_DoorDash, all_classes_TEPH_DoorDash, cv=10)
+        TEPH_k = cv_scores.mean()
+        svr.fit(all_features_scaled_DoorDash, all_classes_TEPH_DoorDash)
+        TEPH = svr.predict(test_input)[0]
+        TEPH_array = [TEPH, TEPH_k, "TEPH"]
+        return [TEPH_array]
 
 # Stats
 from scipy.stats import norm

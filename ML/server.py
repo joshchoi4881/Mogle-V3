@@ -150,7 +150,7 @@ svr = svm.SVR(kernel="rbf", C=C)
 
 # Return RBF SVM estimates and k-fold cross-validation scores for UberX
 def get_RBF_SVM_UberX(location, datetime_SINE, datetime_COSINE, dayOfWeek):
-    if location == -1:
+    if location == 0:
         test_input = [[datetime_SINE, datetime_COSINE, dayOfWeek]]
         # NPEPH
         cv_scores = cross_val_score(svr, general_features_scaled_UberX, all_classes_NPEPH_UberX, cv=10)
@@ -171,7 +171,7 @@ def get_RBF_SVM_UberX(location, datetime_SINE, datetime_COSINE, dayOfWeek):
 
 # Return RBF SVM estimates and k-fold cross-validation scores for Uber Eats
 def get_RBF_SVM_Uber_Eats(location, datetime_SINE, datetime_COSINE, dayOfWeek):
-    if location == -1:
+    if location == 0:
         test_input = [[datetime_SINE, datetime_COSINE, dayOfWeek]]
         # NPEPH
         cv_scores = cross_val_score(svr, general_features_scaled_Uber_Eats, all_classes_NPEPH_Uber_Eats, cv=10)
@@ -192,7 +192,7 @@ def get_RBF_SVM_Uber_Eats(location, datetime_SINE, datetime_COSINE, dayOfWeek):
 
 # Return RBF SVM estimates and k-fold cross-validation scores for DoorDash
 def get_RBF_SVM_DoorDash(location, start_datetime_SINE, start_datetime_COSINE, end_datetime_SINE, end_datetime_COSINE, dayOfWeek):
-    if location == -1:
+    if location == 0:
         test_input = [[start_datetime_SINE, start_datetime_COSINE, end_datetime_SINE, end_datetime_COSINE, dayOfWeek]]
         # TEPH
         cv_scores = cross_val_score(svr, general_features_scaled_DoorDash, all_classes_TEPH_DoorDash, cv=10)

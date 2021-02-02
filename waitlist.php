@@ -55,6 +55,9 @@
                         <a href="index.html" class="nav-logo-link w-inline-block"><img src="images/Mogle-Logo-White.png" sizes="(max-width: 479px) 153.796875px, 156.40625px" srcset="images/Mogle-Logo-White-p-500.png 500w, images/Mogle-Logo-White-p-800.png 800w, images/Mogle-Logo-White-p-1080.png 1080w, images/Mogle-Logo-White-p-1600.png 1600w, images/Mogle-Logo-White-p-2000.png 2000w, images/Mogle-Logo-White-p-2600.png 2600w, images/Mogle-Logo-White.png 3582w" alt="" class="nav-logo"></a>
                     </li>
                     <li class="list-item">
+                        <a href="about.php" class="nav-link">About</a>
+                    </li>
+                    <li class="list-item">
                         <a href="analytics.php" class="nav-link">Analytics</a>
                     </li>
                     <li>

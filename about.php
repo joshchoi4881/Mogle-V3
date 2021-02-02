@@ -42,6 +42,12 @@
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9028548.js"></script>
   <!-- End of HubSpot Embed Code -->
+  <style>
+      #photos {
+          display: flex;
+          justify-content: space-evenly;
+      }
+  </style>
 </head>
 <body>
   <header id="nav" class="sticky-nav">
@@ -68,24 +74,27 @@
   <div class="columns w-row">
     <div class="column w-col w-col-9 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
       <div class="div-block">
-        <h1 class="heading">Income Stability for Gig Workers</h1>
-        <p class="paragraph">Mogle provides income stability for gig workers through income insurance.</p>
-        <p class="paragraph">Gig workers have to deal with income variability due to unpredictable factors such as platform offerings, gig frequency, peak hours, and tips. This is especially a problem during COVID-19 and the aftermath of Proposition 22 passing in California.</p>
-        <p class="paragraph">By insuring against slow hours and poor tips, Mogle provides an income safety net for gig workers by crowdsourcing the risk of falling short on income.</p>
-        <p class="paragraph">Enter your location, platform(s), and hours in the <a href="scheduler.php">scheduler</a> to estimate how much you'll make on average and the associated quote based on your inputs.</p>
-        <p class="paragraph">If you agree to the premiums and end up making less than the average, Mogle will insure you back up to the average.</p>
-        <p class="paragraph">Mogle is also offering to run <b style="color:#63293a">free</b> <a href="analytics.php">analytics</a> on your earnings data so you can learn more about your income patterns.</p>
-        <p class="paragraph">Visit our <a href="about.php">about</a> page to learn more.</p>
-        <a href="waitlist.php" class="button-2 w-button">Join Waitlist</a>
-      </div>
-      <div class="div-block-2">
-        <p class="paragraph-2"><strong>Brands We Insure</strong></p>
-        <div class="div-block-3"><img src="images/Uber.png" loading="lazy" alt="" class="image-2"><img src="images/Lyft.png" loading="lazy" alt="" class="image-3"><img src="images/Uber-Eats.png" loading="lazy" alt="" class="image-4"><img src="images/Postmates.png" loading="lazy" sizes="(max-width: 479px) 4vw, (max-width: 991px) 2vw, 4vw" srcset="images/Postmates-p-500.png 500w, images/Postmates-p-800.png 800w, images/Postmates.png 1000w" alt="" class="image-5"><img src="images/DoorDash.png" loading="lazy" sizes="(max-width: 479px) 6vw, (max-width: 991px) 3vw, 5vw" srcset="images/DoorDash-p-500.png 500w, images/DoorDash-p-800.png 800w, images/DoorDash-p-1080.png 1080w, images/DoorDash.png 2000w" alt="" class="image-6"><img src="images/Grubhub.png" loading="lazy" sizes="(max-width: 479px) 7vw, (max-width: 767px) 3vw, (max-width: 991px) 4vw, 6vw" srcset="images/Grubhub-p-500.png 500w, images/Grubhub-p-800.png 800w, images/Grubhub-p-1080.png 1080w, images/Grubhub.png 3000w" alt="" class="image-7"><img src="images/Instacart.png" loading="lazy" sizes="(max-width: 479px) 9vw, (max-width: 991px) 4vw, 7vw" srcset="images/Instacart-p-500.png 500w, images/Instacart-p-800.png 800w, images/Instacart.png 936w" alt="" class="image-8"><img src="images/Shipt.png" loading="lazy" sizes="(max-width: 479px) 6vw, (max-width: 991px) 3vw, 5vw" srcset="images/Shipt-p-500.png 500w, images/Shipt.png 657w" alt="" class="image-9"></div>
+        <h1 class="heading">About</h1>
+        <p class="paragraph">Mogle's mission is to provide income stability for gig workers.</p>
+        <h1 class="heading">FAQ</h1>
+        <h3 class="heading">Won't I just be losing money in the long-run?</h3>
+        <p class="paragraph">No. You would essentially be flattening your income variability while also making the same amount in the long-run.</p>
+        <p class="paragraph">Additionally, Mogle's premiums are currently priced at the point at which the company would break even.</p>
+        <p class="paragraph">To visualize this, here are some graphs that demonstrate income patterns before and after using Mogle:</p>
+        <div id="photos">
+            <div>
+                <h5 class="heading">Before:</h5>
+                <img src="photos/about/Before.png"></img>
+            </div>
+            <div>
+                <h5 class="heading">After:</h5>
+                <img src="photos/about/After.png"></img>
+            </div>
+        </div>
       </div>
     </div>
     <div class="column-2 w-col w-col-3 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack"><img src="images/Gilded.png" loading="lazy" width="253" sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 25vw" srcset="images/Gilded-p-500.png 500w, images/Gilded-p-800.png 800w, images/Gilded-p-1080.png 1080w, images/Gilded-p-1600.png 1600w, images/Gilded-p-2000.png 2000w, images/Gilded-p-2600.png 2600w, images/Gilded.png 3213w" alt="" class="image-10"></div>
   </div>
-  <script src="js/mogle.js"></script>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5fb2ff343ea8d816988a3ee5" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->

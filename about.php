@@ -79,7 +79,6 @@
         <h1 class="heading">FAQ</h1>
         <h3 class="heading">Won't I just be losing money in the long-run?</h3>
         <p class="paragraph">No. You would essentially be flattening your income variability while also making the same amount in the long-run.</p>
-        <p class="paragraph">Additionally, Mogle's premiums are currently priced at the point at which the company would break even.</p>
         <p class="paragraph">To visualize this, here are some graphs that demonstrate income patterns before and after using Mogle:</p>
         <div id="photos">
             <div>

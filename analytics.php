@@ -69,7 +69,7 @@
         <section class="center">
             <div class="card">
                 <h1 class="ovo">Analytics</h1>
-                <p class="gilroy">Mogle is offering to run <b style="color:#63293a">free</b> analytics on your earnings data so you can learn more about your income patterns.</p>
+                <p class="gilroy">Mogle is offering to run free analytics on your earnings data so you can learn more about your income patterns.</p>
                 <p class="gilroy">Join our <a href="waitlist.php">waitlist</a> to request tailored analytics for your platform(s) and city.</p>
             </div>
             <div class="card center">

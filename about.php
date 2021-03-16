@@ -76,6 +76,8 @@
       <div class="div-block">
         <h1 class="heading">About</h1>
         <p class="paragraph">Mogle's mission is to provide income stability for gig workers.</p>
+        <p class="paragraph">Gig workers have to deal with income variability due to unpredictable factors such as platform offerings, gig frequency, peak hours, and tips. This is especially a problem during COVID-19 and the aftermath of Proposition 22 passing in California.</p>
+        <p class="paragraph">By insuring against slow hours and poor tips, Mogle provides an income safety net for gig workers by crowdsourcing the risk of falling short on income.</p>
         <h1 class="heading">FAQ</h1>
         <h3 class="heading">Won't I just be losing money in the long-run?</h3>
         <p class="paragraph">No. You would essentially be flattening your income variability while also making the same amount in the long-run.</p>

@@ -1,0 +1,5 @@
+.env
+vendor
+
+.env_xampp
+.env_ec2
